@@ -93,11 +93,11 @@ const InvitationPage = ({ musicEnabled }) => {
 
   const handleAddToCalendar = () => {
     const event = {
-      title: 'Mis 15 años - Fernanda',
-      description: 'Celebración de 15 años de Fernanda',
-      location: 'Salon Avril, Av. Pergamino 203, Guatemala',
-      startDate: '2026-01-31T19:00:00',
-      endDate: '2026-02-01T02:00:00'
+      title: 'XV Años - Fernanda',
+      description: 'Celebración de los XV años de Angie Fernanda Urbina Saravia. Misa: 16:00 hrs en Iglesia Belén. Fiesta: 17:00 hrs en Eventos La Casa del Lago.',
+      location: 'Eventos La Casa del Lago, Amatitlán, Guatemala',
+      startDate: '2026-01-31T16:00:00',
+      endDate: '2026-02-01T00:00:00'
     }
 
     const formatDate = (dateString) => {
@@ -581,91 +581,163 @@ const InvitationPage = ({ musicEnabled }) => {
         </div>
 
         {/* Sección Notas */}
-        <div className="py-12 md:py-16 px-6">
-          <div className="max-w-6xl mx-auto text-center space-y-8">
-            <h2 className="text-3xl md:text-4xl text-[#B8936E] font-serif mb-4">Fiesta</h2>
-            <p className="text-lg md:text-xl text-gray-500 mb-8">Hagamos juntos una fiesta épica. Aquí algunos detalles a tener en cuenta.</p>
-            
-            {/* Flor decorativa */}
-            <div className="flex justify-center mb-12">
-              <img 
-                src={`${basePath}images/Flores2.png`} 
-                alt="Flores decorativas" 
-                className="w-48 h-48 md:w-56 md:h-56 object-contain ml-4 md:ml-6"
-              />
+        <div className="py-16 md:py-20 px-6 bg-gradient-to-b from-[#f5e6e8] to-white">
+          <div className="max-w-6xl mx-auto">
+            {/* Título con decoración */}
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gold-600 to-gold-600"></div>
+                <div className="relative">
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-[#B8936E] relative z-10">Detalles</h2>
+                  <div className="absolute inset-0 blur-sm bg-[#B8936E] opacity-20"></div>
+                </div>
+                <div className="flex-1 h-px bg-gradient-to-l from-transparent via-gold-600 to-gold-600"></div>
+              </div>
+              <p className="text-lg md:text-xl text-gray-500 font-serif italic">Hagamos juntos una fiesta épica</p>
             </div>
 
-            {/* Tarjetas */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {/* Flor decorativa central */}
+            <div className="flex justify-center mb-12">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#B8936E]/20 to-[#A07D5C]/20 rounded-full blur-3xl"></div>
+                <img 
+                  src={`${basePath}images/Flores2.png`} 
+                  alt="Flores decorativas" 
+                  className="relative w-40 h-40 md:w-48 md:h-48 object-contain animate-pulse"
+                />
+              </div>
+            </div>
+
+            {/* Tarjetas mejoradas */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Música */}
-              <div className="bg-white/50 rounded-lg p-8 shadow-md">
-                <div className="flex justify-center mb-4">
-                  <img 
-                    src={`${basePath}images/musica.svg`} 
-                    alt="Música" 
-                    className="w-16 h-16 md:w-20 md:h-20"
-                    style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(20%) saturate(700%) hue-rotate(10deg) brightness(90%) contrast(85%)' }}
-                  />
+              <div className="group">
+                <div className="relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-[#B8936E]/20">
+                  {/* Decoración superior */}
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <div className="w-20 h-20 bg-gradient-to-br from-[#B8936E] to-[#A07D5C] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <img 
+                        src={`${basePath}images/musica.svg`} 
+                        alt="Música" 
+                        className="w-10 h-10"
+                        style={{ filter: 'brightness(0) saturate(100%) invert(100%)' }}
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="mt-12 text-center">
+                    <h3 className="text-2xl md:text-3xl font-serif text-gray-800 mb-4 flex items-center justify-center gap-2">
+                      Música
+                      <svg className="w-5 h-5 text-[#B8936E] group-hover:animate-bounce" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/>
+                      </svg>
+                    </h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">¿Cuál es la canción que no debe faltar en la playlist?</p>
+                    <button 
+                      onClick={() => setModalOpen('musica')}
+                      className="bg-gradient-to-r from-[#B8936E] to-[#A07D5C] text-white px-8 py-3 rounded-full text-base hover:shadow-xl hover:scale-105 transition-all duration-300 font-medium"
+                    >
+                      Sugerir Canción
+                    </button>
+                  </div>
                 </div>
-                <h3 className="text-xl md:text-2xl font-serif text-gray-600 mb-4">Música</h3>
-                <p className="text-sm md:text-base text-gray-500 mb-6">Cual es la canción que no debe faltar en la playlist de la fiesta?</p>
-                <button 
-                  onClick={() => setModalOpen('musica')}
-                  className="bg-gray-600 text-white px-6 py-2 rounded-full text-sm md:text-base hover:bg-gray-700 transition-colors"
-                >
-                  SUGERIR CANCIÓN
-                </button>
               </div>
 
               {/* Dress Code */}
-              <div className="bg-white/50 rounded-lg p-8 shadow-md">
-                <div className="flex justify-center mb-4">
-                  <img 
-                    src={`${basePath}images/vestuario.svg`} 
-                    alt="Dress Code" 
-                    className="w-16 h-16 md:w-20 md:h-20"
-                    style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(20%) saturate(700%) hue-rotate(10deg) brightness(90%) contrast(85%)' }}
-                  />
+              <div className="group">
+                <div className="relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-[#B8936E]/20">
+                  {/* Decoración superior */}
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <div className="w-20 h-20 bg-gradient-to-br from-[#A07D5C] to-[#8B6F4E] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <img 
+                        src={`${basePath}images/vestuario.svg`} 
+                        alt="Dress Code" 
+                        className="w-10 h-10"
+                        style={{ filter: 'brightness(0) saturate(100%) invert(100%)' }}
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="mt-12 text-center">
+                    <h3 className="text-2xl md:text-3xl font-serif text-gray-800 mb-4 flex items-center justify-center gap-2">
+                      Dress Code
+                      <svg className="w-5 h-5 text-[#B8936E] group-hover:animate-spin" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd"/>
+                      </svg>
+                    </h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">Una orientación para tu vestuario</p>
+                    <button 
+                      onClick={() => setModalOpen('dresscode')}
+                      className="bg-gradient-to-r from-[#A07D5C] to-[#8B6F4E] text-white px-8 py-3 rounded-full text-base hover:shadow-xl hover:scale-105 transition-all duration-300 font-medium"
+                    >
+                      Ver Más
+                    </button>
+                  </div>
                 </div>
-                <h3 className="text-xl md:text-2xl font-serif text-gray-600 mb-4">Dress Code</h3>
-                <p className="text-sm md:text-base text-gray-500 mb-6">Una orientación para tu vestuario</p>
-                <button 
-                  onClick={() => setModalOpen('dresscode')}
-                  className="bg-gray-600 text-white px-6 py-2 rounded-full text-sm md:text-base hover:bg-gray-700 transition-colors"
-                >
-                  VER MÁS
-                </button>
               </div>
 
               {/* Confirmación */}
-              <div className="bg-white/50 rounded-lg p-8 shadow-md">
-                <div className="flex justify-center mb-4">
-                  <img 
-                    src={`${basePath}images/tips.svg`} 
-                    alt="Confirmación" 
-                    className="w-16 h-16 md:w-20 md:h-20"
-                    style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(20%) saturate(700%) hue-rotate(10deg) brightness(90%) contrast(85%)' }}
-                  />
+              <div className="group">
+                <div className="relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-[#B8936E]/20">
+                  {/* Decoración superior */}
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <div className="w-20 h-20 bg-gradient-to-br from-[#B8936E] to-[#D4A574] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <img 
+                        src={`${basePath}images/tips.svg`} 
+                        alt="Confirmación" 
+                        className="w-10 h-10"
+                        style={{ filter: 'brightness(0) saturate(100%) invert(100%)' }}
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="mt-12 text-center">
+                    <h3 className="text-2xl md:text-3xl font-serif text-gray-800 mb-4 flex items-center justify-center gap-2">
+                      Confirmación
+                      <svg className="w-5 h-5 text-[#B8936E] group-hover:animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                      </svg>
+                    </h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">Confirma tu asistencia</p>
+                    <button 
+                      onClick={() => setModalOpen('confirmacion')}
+                      className="bg-gradient-to-r from-[#B8936E] to-[#D4A574] text-white px-8 py-3 rounded-full text-base hover:shadow-xl hover:scale-105 transition-all duration-300 font-medium"
+                    >
+                      Confirmar
+                    </button>
+                  </div>
                 </div>
-                <h3 className="text-xl md:text-2xl font-serif text-gray-600 mb-4">Confirmación</h3>
-                <p className="text-sm md:text-base text-gray-500 mb-6">Confirma tu asistencia</p>
-                <button 
-                  onClick={() => setModalOpen('confirmacion')}
-                  className="bg-gray-600 text-white px-6 py-2 rounded-full text-sm md:text-base hover:bg-gray-700 transition-colors"
-                >
-                  CONFIRMAR
-                </button>
               </div>
+            </div>
+
+            {/* Decoración inferior */}
+            <div className="flex justify-center mt-12 gap-3">
+              <div className="w-3 h-3 bg-[#B8936E] rounded-full animate-bounce"></div>
+              <div className="w-3 h-3 bg-[#A07D5C] rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+              <div className="w-3 h-3 bg-[#D4A574] rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
             </div>
           </div>
         </div>
 
         {/* Sección Regalos */}
-        <div className="py-12 md:py-16 px-6">
-          <div className="max-w-2xl mx-auto text-center space-y-8">
-            <h2 className="text-3xl md:text-4xl text-[#B8936E] font-serif italic mb-4">Regalos</h2>
-            <p className="text-lg md:text-xl text-gray-600 mb-8">Si deseas regalarme algo más que tu hermosa presencia...</p>
-            
+        <div className="py-16 md:py-20 px-6 relative overflow-hidden">
+          {/* Fondo decorativo */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#f5e6e8] via-white to-[#f5e6e8]"></div>
+          
+          <div className="max-w-2xl mx-auto relative z-10">
+            {/* Título con decoración */}
+            <div className="text-center mb-10">
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gold-600 to-gold-600"></div>
+                <div className="relative">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif italic text-[#B8936E] relative z-10">Regalos</h2>
+                  <div className="absolute inset-0 blur-sm bg-[#B8936E] opacity-20"></div>
+                </div>
+                <div className="flex-1 h-px bg-gradient-to-l from-transparent via-gold-600 to-gold-600"></div>
+              </div>
+              <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed">Si deseas regalarme algo más que tu hermosa presencia...</p>
+            </div>
+
             {/* Icono de regalo */}
             <div className="flex justify-center mb-8">
               <img 
@@ -676,12 +748,21 @@ const InvitationPage = ({ musicEnabled }) => {
             </div>
 
             {/* Botón */}
-            <button 
-              onClick={() => setModalOpen('regalos')}
-              className="bg-[#B8936E] text-white px-8 py-3 rounded-full text-base md:text-lg hover:bg-[#A07D5C] transition-colors"
-            >
-              VER MÁS
-            </button>
+            <div className="text-center">
+              <button 
+                onClick={() => setModalOpen('regalos')}
+                className="bg-[#B8936E] text-white px-8 py-3 rounded-full text-base md:text-lg hover:bg-[#A07D5C] transition-colors shadow-lg"
+              >
+                VER MÁS
+              </button>
+            </div>
+
+            {/* Decoración inferior */}
+            <div className="flex justify-center items-center mt-10 gap-3">
+              <div className="w-2 h-2 bg-[#B8936E] rounded-full"></div>
+              <div className="w-3 h-3 bg-[#A07D5C] rounded-full"></div>
+              <div className="w-2 h-2 bg-[#D4A574] rounded-full"></div>
+            </div>
           </div>
         </div>
 
