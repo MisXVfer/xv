@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/InvitacionFer/',
+  base: '/',
   build: {
     outDir: 'docs',
     assetsDir: 'assets',
@@ -18,7 +18,7 @@ export default defineConfig({
     }
   },
   server: {
-    port: 5000,
+    port: 5173,
     open: true
   }
 })

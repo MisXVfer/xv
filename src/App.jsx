@@ -1,22 +1,46 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import InvitationPage from './components/InvitationPage'
+import GuestValidation from './components/GuestValidation'
 import FloralDecoration from './components/FloralDecoration'
 
 function App() {
+  const [isValidated, setIsValidated] = useState(false)
+  const [guestData, setGuestData] = useState(null)
   const [showInvitation, setShowInvitation] = useState(false)
   const [musicEnabled, setMusicEnabled] = useState(null)
+
+  // Verificar si ya hay un invitado validado en localStorage
+  useEffect(() => {
+    const savedGuest = localStorage.getItem('guestData')
+    if (savedGuest) {
+      const guest = JSON.parse(savedGuest)
+      setGuestData(guest)
+      setIsValidated(true)
+    }
+  }, [])
 
   // Coloca aquí el ID del video de YouTube (la parte después de v= en la URL)
   // Por ejemplo: https://www.youtube.com/watch?v=XXXXXXXXXXX
   const YOUTUBE_VIDEO_ID = 'qQkJe0zzf9w' // Reemplaza esto con tu ID de video
+
+  const handleValidGuest = (guest) => {
+    setGuestData(guest)
+    setIsValidated(true)
+  }
 
   const handleMusicChoice = (enabled) => {
     setMusicEnabled(enabled)
     setShowInvitation(true)
   }
 
+  // Si no está validado, mostrar pantalla de validación
+  if (!isValidated) {
+    return <GuestValidation onValidGuest={handleValidGuest} />
+  }
+
+  // Si está validado pero no ha elegido música, mostrar pantalla de bienvenida
   if (showInvitation) {
-    return <InvitationPage musicEnabled={musicEnabled} />
+    return <InvitationPage musicEnabled={musicEnabled} guestData={guestData} />
   }
 
   return (
@@ -33,6 +57,18 @@ function App() {
           
           {/* Contenido principal */}
           <div className="text-center py-8 px-4 relative z-10">
+          {/* Mensaje personalizado de bienvenida */}
+          {guestData && (
+            <div className="mb-6 bg-white/50 rounded-xl p-4 backdrop-blur-sm">
+              <p className="font-sans text-gray-700 text-base md:text-lg">
+                ¡Hola <span className="font-semibold text-rose-500">{guestData.nombre}</span>!
+              </p>
+              <p className="font-sans text-gray-600 text-sm mt-1">
+                Tu invitación es para <span className="font-semibold text-purple-600">{guestData.numeroPersonas}</span> {guestData.numeroPersonas === 1 ? 'persona' : 'personas'}
+              </p>
+            </div>
+          )}
+          
           {/* Título superior */}
           <p className="font-sans text-gray-600 text-sm md:text-base mb-2 tracking-wide">
             Bienvenidos a la invitación de

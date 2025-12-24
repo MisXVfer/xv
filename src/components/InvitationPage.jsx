@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef } from 'react'
 
-const InvitationPage = ({ musicEnabled }) => {
+const InvitationPage = ({ musicEnabled, guestData }) => {
   const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
   const [modalOpen, setModalOpen] = useState(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [showMapModal, setShowMapModal] = useState(false)
   const [mapLocation, setMapLocation] = useState(null) // 'fiesta' o 'misa'
   const audioRef = useRef(null)
-  const basePath = '/InvitacionFer/'
+  const basePath = '/'
 
   // Links de navegación para Fiesta
   const FIESTA_GOOGLE_MAPS = 'https://maps.app.goo.gl/7itQwNXLR2pbwS5T7'
@@ -227,6 +227,15 @@ const InvitationPage = ({ musicEnabled }) => {
         <div className="max-w-4xl mx-auto">
           {/* Texto introductorio */}
           <div className="text-center mb-12 px-6 max-w-2xl mx-auto space-y-6">
+            {/* Lorem ipsum de 5 líneas */}
+            <div className="text-gray-600 text-base md:text-lg leading-relaxed space-y-3 mb-8">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.</p>
+            </div>
+            
             <p className="text-gray-700 text-lg md:text-xl font-serif italic leading-relaxed">
               Una noche de ensueño para celebrar el más hermoso despertar.
             </p>
@@ -316,131 +325,6 @@ const InvitationPage = ({ musicEnabled }) => {
         {/* Imagen decorativa de líneas */}
         <div className="w-screen md:w-full">
           <img src={`${basePath}images/lineas01.svg`} alt="Líneas decorativas" className="w-full h-auto" />
-        </div>
-
-        {/* Sección Fiesta */}
-        <div className="py-16 md:py-20 px-6 relative">
-          <div className="max-w-4xl mx-auto">
-            {/* Círculo decorativo con imagen - Posición superior */}
-            <div className="flex justify-center -mt-8 md:-mt-20 mb-12">
-              <div className="relative">
-                <div className="w-28 h-28 md:w-40 md:h-40 bg-gradient-to-br from-[#B8936E] to-[#A07D5C] rounded-full shadow-2xl flex items-center justify-center animate-pulse">
-                  <div className="w-24 h-24 md:w-36 md:h-36 bg-white rounded-full flex items-center justify-center">
-                    <img 
-                      src={`${basePath}images/Fiesta.svg`} 
-                      alt="Decoración fiesta" 
-                      className="w-12 h-12 md:w-20 md:h-20 animate-shake-slow" 
-                      style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(20%) saturate(700%) hue-rotate(10deg) brightness(90%) contrast(85%)' }}
-                    />
-                  </div>
-                </div>
-                {/* Destellos decorativos */}
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gold-600 rounded-full opacity-60 animate-ping"></div>
-                <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gold-600 rounded-full opacity-60 animate-ping" style={{animationDelay: '0.5s'}}></div>
-              </div>
-            </div>
-
-            {/* Título con ornamentos */}
-            <div className="text-center mb-10">
-              <div className="flex items-center justify-center gap-4 mb-6">
-                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gold-600 to-gold-600"></div>
-                <div className="relative">
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-[#B8936E] relative z-10">
-                    Fiesta
-                  </h2>
-                  <div className="absolute inset-0 blur-sm bg-[#B8936E] opacity-20"></div>
-                </div>
-                <div className="flex-1 h-px bg-gradient-to-l from-transparent via-gold-600 to-gold-600"></div>
-              </div>
-            </div>
-
-            {/* Contenedor principal con diseño alternado */}
-            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-              {/* Sección Día - Con fondo */}
-              <div className="bg-gradient-to-r from-[#f5e6e8] to-white p-8 md:p-10 border-b-2 border-[#B8936E]/20">
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-                  {/* Icono */}
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 md:w-20 md:h-20 bg-[#B8936E] rounded-2xl flex items-center justify-center shadow-lg transform rotate-3 hover:rotate-0 transition-transform">
-                      <svg className="w-8 h-8 md:w-10 md:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                      </svg>
-                    </div>
-                  </div>
-                  
-                  {/* Contenido */}
-                  <div className="flex-1 text-center md:text-left">
-                    <h3 className="text-2xl md:text-3xl font-serif text-gray-800 mb-3 flex items-center justify-center md:justify-start gap-2">
-                      Fecha & Hora
-                      <svg className="w-5 h-5 text-gold-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                      </svg>
-                    </h3>
-                    <div className="space-y-1 mb-4">
-                      <p className="text-lg md:text-xl text-gray-600">Sábado, 31 de Enero</p>
-                      <p className="text-2xl md:text-3xl font-serif text-[#B8936E] font-semibold">17:00 hrs</p>
-                    </div>
-                    <button 
-                      onClick={handleAddToCalendar}
-                      className="bg-[#B8936E] text-white px-8 py-3 rounded-full text-base md:text-lg hover:bg-[#A07D5C] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2 font-medium"
-                    >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"/>
-                      </svg>
-                      Guardar en Calendario
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Sección Dirección - Sin fondo */}
-              <div className="bg-white p-8 md:p-10">
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-                  {/* Icono */}
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-[#B8936E] to-[#A07D5C] rounded-2xl flex items-center justify-center shadow-lg transform -rotate-3 hover:rotate-0 transition-transform">
-                      <svg className="w-8 h-8 md:w-10 md:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                      </svg>
-                    </div>
-                  </div>
-                  
-                  {/* Contenido */}
-                  <div className="flex-1 text-center md:text-left">
-                    <h3 className="text-2xl md:text-3xl font-serif text-gray-800 mb-3 flex items-center justify-center md:justify-start gap-2">
-                      Ubicación
-                      <svg className="w-5 h-5 text-gold-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
-                      </svg>
-                    </h3>
-                    <p className="text-lg md:text-xl text-gray-600 mb-4 leading-relaxed">
-                      Eventos La Casa del Lago<br/>
-                      <span className="text-gray-500">Amatitlán, Guatemala</span>
-                    </p>
-                    <button 
-                      onClick={() => openMapModal('fiesta')}
-                      className="bg-gradient-to-r from-[#B8936E] to-[#A07D5C] text-white px-8 py-3 rounded-full text-base md:text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg inline-flex items-center gap-2 font-medium"
-                    >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-                      </svg>
-                      Ver Ubicación
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Decoración inferior */}
-            <div className="flex justify-center mt-8">
-              <div className="flex gap-2">
-                <div className="w-2 h-2 bg-gold-600 rounded-full animate-bounce"></div>
-                <div className="w-2 h-2 bg-gold-600 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
-                <div className="w-2 h-2 bg-gold-600 rounded-full animate-bounce" style={{animationDelay: '0.4s'}}></div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Sección Misa */}
@@ -545,6 +429,131 @@ const InvitationPage = ({ musicEnabled }) => {
                     </p>
                     <button 
                       onClick={() => openMapModal('misa')}
+                      className="bg-gradient-to-r from-[#B8936E] to-[#A07D5C] text-white px-8 py-3 rounded-full text-base md:text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg inline-flex items-center gap-2 font-medium"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+                      </svg>
+                      Ver Ubicación
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Decoración inferior */}
+            <div className="flex justify-center mt-8">
+              <div className="flex gap-2">
+                <div className="w-2 h-2 bg-gold-600 rounded-full animate-bounce"></div>
+                <div className="w-2 h-2 bg-gold-600 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                <div className="w-2 h-2 bg-gold-600 rounded-full animate-bounce" style={{animationDelay: '0.4s'}}></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Sección Fiesta */}
+        <div className="py-16 md:py-20 px-6 relative">
+          <div className="max-w-4xl mx-auto">
+            {/* Círculo decorativo con imagen - Posición superior */}
+            <div className="flex justify-center -mt-8 md:-mt-20 mb-12">
+              <div className="relative">
+                <div className="w-28 h-28 md:w-40 md:h-40 bg-gradient-to-br from-[#B8936E] to-[#A07D5C] rounded-full shadow-2xl flex items-center justify-center animate-pulse">
+                  <div className="w-24 h-24 md:w-36 md:h-36 bg-white rounded-full flex items-center justify-center">
+                    <img 
+                      src={`${basePath}images/Fiesta.svg`} 
+                      alt="Decoración fiesta" 
+                      className="w-12 h-12 md:w-20 md:h-20 animate-shake-slow" 
+                      style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(20%) saturate(700%) hue-rotate(10deg) brightness(90%) contrast(85%)' }}
+                    />
+                  </div>
+                </div>
+                {/* Destellos decorativos */}
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gold-600 rounded-full opacity-60 animate-ping"></div>
+                <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gold-600 rounded-full opacity-60 animate-ping" style={{animationDelay: '0.5s'}}></div>
+              </div>
+            </div>
+
+            {/* Título con ornamentos */}
+            <div className="text-center mb-10">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gold-600 to-gold-600"></div>
+                <div className="relative">
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-[#B8936E] relative z-10">
+                    Fiesta
+                  </h2>
+                  <div className="absolute inset-0 blur-sm bg-[#B8936E] opacity-20"></div>
+                </div>
+                <div className="flex-1 h-px bg-gradient-to-l from-transparent via-gold-600 to-gold-600"></div>
+              </div>
+            </div>
+
+            {/* Contenedor principal con diseño alternado */}
+            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+              {/* Sección Día - Con fondo */}
+              <div className="bg-gradient-to-r from-[#f5e6e8] to-white p-8 md:p-10 border-b-2 border-[#B8936E]/20">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+                  {/* Icono */}
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 md:w-20 md:h-20 bg-[#B8936E] rounded-2xl flex items-center justify-center shadow-lg transform rotate-3 hover:rotate-0 transition-transform">
+                      <svg className="w-8 h-8 md:w-10 md:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  
+                  {/* Contenido */}
+                  <div className="flex-1 text-center md:text-left">
+                    <h3 className="text-2xl md:text-3xl font-serif text-gray-800 mb-3 flex items-center justify-center md:justify-start gap-2">
+                      Fecha & Hora
+                      <svg className="w-5 h-5 text-gold-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                    </h3>
+                    <div className="space-y-1 mb-4">
+                      <p className="text-lg md:text-xl text-gray-600">Sábado, 31 de Enero</p>
+                      <p className="text-2xl md:text-3xl font-serif text-[#B8936E] font-semibold">17:00 hrs</p>
+                    </div>
+                    <button 
+                      onClick={handleAddToCalendar}
+                      className="bg-[#B8936E] text-white px-8 py-3 rounded-full text-base md:text-lg hover:bg-[#A07D5C] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2 font-medium"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"/>
+                      </svg>
+                      Guardar en Calendario
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Sección Dirección - Sin fondo */}
+              <div className="bg-white p-8 md:p-10">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+                  {/* Icono */}
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-[#B8936E] to-[#A07D5C] rounded-2xl flex items-center justify-center shadow-lg transform -rotate-3 hover:rotate-0 transition-transform">
+                      <svg className="w-8 h-8 md:w-10 md:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  
+                  {/* Contenido */}
+                  <div className="flex-1 text-center md:text-left">
+                    <h3 className="text-2xl md:text-3xl font-serif text-gray-800 mb-3 flex items-center justify-center md:justify-start gap-2">
+                      Ubicación
+                      <svg className="w-5 h-5 text-gold-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
+                      </svg>
+                    </h3>
+                    <p className="text-lg md:text-xl text-gray-600 mb-4 leading-relaxed">
+                      Eventos La Casa del Lago<br/>
+                      <span className="text-gray-500">Amatitlán, Guatemala</span>
+                    </p>
+                    <button 
+                      onClick={() => openMapModal('fiesta')}
                       className="bg-gradient-to-r from-[#B8936E] to-[#A07D5C] text-white px-8 py-3 rounded-full text-base md:text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg inline-flex items-center gap-2 font-medium"
                     >
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
