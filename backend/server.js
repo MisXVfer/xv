@@ -9,7 +9,8 @@ const app = express();
 const corsOptions = {
   origin: [
     'http://localhost:5173',
-    'https://alejandro-u2.github.io'
+    'https://alejandro-u2.github.io',
+    'https://misxvfer.github.io'
   ],
   credentials: true
 };
