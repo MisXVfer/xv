@@ -6,7 +6,14 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-app.use(cors());
+const corsOptions = {
+  origin: [
+    'http://localhost:5173',
+    'https://alejandro-u2.github.io'
+  ],
+  credentials: true
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Conexión a MongoDB
