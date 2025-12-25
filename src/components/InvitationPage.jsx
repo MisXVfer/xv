@@ -226,14 +226,48 @@ const InvitationPage = ({ musicEnabled, guestData }) => {
         
         <div className="max-w-4xl mx-auto">
           {/* Texto introductorio */}
-          <div className="text-center mb-12 px-6 max-w-2xl mx-auto space-y-6">
-            {/* Mensaje de agradecimiento */}
-            <div className="text-gray-600 text-base md:text-lg leading-relaxed space-y-3 mb-8">
-              <p>Hoy hace Quince Años mis padres daban gracias a Dios por mi.</p>
-              <p>Hoy doy gracias a Dios por ellos, por cuidarme, tenerme paciencia y aconsejarme.</p>
-              <p>Doy gracias también a toda mi familia por hacer más especial este día.</p>
-              <p>A todos mis amigos por enseñarme el valor de una verdadera amistad.</p>
-              <p>Gracias por acompañarme que Dios los bendiga.</p>
+          <div className="text-center mb-12 px-6 max-w-3xl mx-auto space-y-8">
+            {/* Mensaje de agradecimiento con diseño mejorado */}
+            <div className="relative">
+              {/* Decoración superior */}
+              <div className="flex justify-center mb-6">
+                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#d1a862] to-transparent"></div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-[#faf5f0] to-white rounded-2xl shadow-lg p-8 md:p-10 border border-[#d1a862]/20">
+                <div className="space-y-5 text-gray-700">
+                  <p className="text-lg md:text-xl font-serif leading-relaxed">
+                    <span className="text-gray-800 font-semibold text-2xl">H</span>oy hace <span className="font-semibold text-[#d1a862]">Quince Años</span> mis padres daban gracias a Dios por mi.
+                  </p>
+                  
+                  <p className="text-base md:text-lg leading-relaxed italic text-gray-600">
+                    Hoy doy gracias a Dios por ellos, por cuidarme, tenerme paciencia y aconsejarme.
+                  </p>
+                  
+                  <div className="flex justify-center my-4">
+                    <div className="w-12 h-0.5 bg-[#d1a862]/30"></div>
+                  </div>
+                  
+                  <p className="text-base md:text-lg leading-relaxed">
+                    Doy gracias también a toda mi <span className="text-[#d1a862] font-medium">familia</span> por hacer más especial este día.
+                  </p>
+                  
+                  <p className="text-base md:text-lg leading-relaxed">
+                    A todos mis <span className="text-[#d1a862] font-medium">amigos</span> por enseñarme el valor de una verdadera amistad.
+                  </p>
+                  
+                  <div className="pt-4 mt-6 border-t border-[#d1a862]/20">
+                    <p className="text-lg md:text-xl font-serif text-[#d1a862] font-semibold">
+                      Gracias por acompañarme<br/>que Dios los bendiga 
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Decoración inferior */}
+              <div className="flex justify-center mt-6">
+                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#d1a862] to-transparent"></div>
+              </div>
             </div>
             
             <p className="text-gray-700 text-lg md:text-xl font-serif italic leading-relaxed">
