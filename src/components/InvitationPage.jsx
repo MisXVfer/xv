@@ -227,13 +227,13 @@ const InvitationPage = ({ musicEnabled, guestData }) => {
         <div className="max-w-4xl mx-auto">
           {/* Texto introductorio */}
           <div className="text-center mb-12 px-6 max-w-2xl mx-auto space-y-6">
-            {/* Lorem ipsum de 5 líneas */}
+            {/* Mensaje de agradecimiento */}
             <div className="text-gray-600 text-base md:text-lg leading-relaxed space-y-3 mb-8">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.</p>
+              <p>Hoy hace Quince Años mis padres daban gracias a Dios por mi.</p>
+              <p>Hoy doy gracias a Dios por ellos, por cuidarme, tenerme paciencia y aconsejarme.</p>
+              <p>Doy gracias también a toda mi familia por hacer más especial este día.</p>
+              <p>A todos mis amigos por enseñarme el valor de una verdadera amistad.</p>
+              <p>Gracias por acompañarme que Dios los bendiga.</p>
             </div>
             
             <p className="text-gray-700 text-lg md:text-xl font-serif italic leading-relaxed">
