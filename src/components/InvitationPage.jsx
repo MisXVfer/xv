@@ -777,7 +777,7 @@ const InvitationPage = ({ musicEnabled, guestData }) => {
                 </div>
                 <div className="flex-1 h-px bg-gradient-to-l from-transparent via-gold-600 to-gold-600"></div>
               </div>
-              <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed">Recuerda confirmar tu asistencia antes del 15 de Enero de 2026. Puedes hacerlo dando clic en el botón "Confirmar"</p>
+              <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed">Recuerda confirmar tu asistencia antes del 20 de Enero de 2026. Puedes hacerlo dando clic en el botón "Confirmar"</p>
             </div>
 
             {/* Icono de confirmación */}
@@ -854,7 +854,7 @@ const InvitationPage = ({ musicEnabled, guestData }) => {
                     ? 'Agradecemos su colaboración manteniendo un atuendo Formal para la celebración. Por favor, tomen en cuenta que el color Rose Gold está reservado de manera exclusiva para la Quinceañera.' 
                     : modalOpen === 'regalos'
                     ? 'Su compañía es nuestro mejor regalo. Si desean tener un presente, les agradeceríamos que este sea en efectivo.'
-                    : 'Recuerda confirmar tu asistencia antes del 15 de Enero de 2026. Puedes hacerlo dando clic en el botón "Confirmar".'}
+                    : 'Recuerda confirmar tu asistencia antes del 20 de Enero de 2026. Puedes hacerlo dando clic en el botón "Confirmar".'}
                 </p>
                 
                 {/* Botón de Spotify solo para música */}
