@@ -69,7 +69,7 @@ const InvitationPage = ({ musicEnabled, guestData }) => {
   }
 
   useEffect(() => {
-    const eventDate = new Date('2026-01-31T19:00:00').getTime()
+    const eventDate = new Date('2026-01-31T16:00:00').getTime()
     
     const updateCountdown = () => {
       const now = new Date().getTime()
@@ -801,7 +801,7 @@ const InvitationPage = ({ musicEnabled, guestData }) => {
                     ? 'Su compañía es nuestro mejor regalo. Si desean tener un presente, les agradeceríamos que este sea en efectivo.'
                     : 'Recuerda confirmar tu asistencia antes del 20 de Enero de 2026. Puedes hacerlo dando clic en el botón "Confirmar".'}
                 </p>
-                
+                 
                 {/* Botón de Spotify solo para música */}
                 {modalOpen === 'musica' && (
                   <a
